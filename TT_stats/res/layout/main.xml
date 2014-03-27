@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <CheckBox
+        android:id="@+id/checkBox_Bianca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bianca" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Maik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maik" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Martin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Martin" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Sebastian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sebastian" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Sven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sven" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Li_Yi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Li Yi" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Sandro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sandro" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textOff="LOSERS"
+        android:textOn="WINNERS" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="240dp"
+        android:layout_marginRight="15dp"
+        android:text="SAVE" />
+
+    <Button
+        android:id="@+id/btnReadout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="READ OUT" />
+
+</LinearLayout>
