@@ -7,5 +7,7 @@
     <string name="title_statistics">Statistiken</string>
     <string name="winner">Gewinner</string>
     <string name="loser">Verlierer</string>
-
+    <string name="invalid_combi">Ungültige Eingabe!</string>
+    <string name="logged">Ergebnis gespeichert</string>
+    
 </resources>

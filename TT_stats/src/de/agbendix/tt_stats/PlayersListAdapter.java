@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
 /**
@@ -46,6 +48,27 @@ public class PlayersListAdapter extends ArrayAdapter<Player> {
 			rowView.setEnabled(true);
 			assignViewHolderElements(rowView);
 		}
+		
+		// Listener für die Winner-CheckBox registrieren...
+		CheckBox WinnerCB = (CheckBox) rowView.findViewById(R.id.cb_winner);
+		WinnerCB.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// Bei Klick auf die CheckBox wird der Status des Spielers entsprechend upgedated...
+				PlayersListAdapter.this.getItem(position).setWon(isChecked);
+			}
+		});
+		
+		// Listener für die Loser-CheckBox registrieren...
+		CheckBox LoserCB = (CheckBox) rowView.findViewById(R.id.cb_loser);
+		LoserCB.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// Bei Klick auf die CheckBox wird der Status des Spielers entsprechend upgedated...
+				PlayersListAdapter.this.getItem(position).setLost(isChecked);
+			}
+		});
+		
 		fillViewHolder(rowView,position);	
 		return rowView;
 	}
@@ -67,6 +90,8 @@ public class PlayersListAdapter extends ArrayAdapter<Player> {
 
 		// Setzen des Namens
 		holder.nameTextView.setText(player.getName());
+		holder.loserCB.setChecked(player.hasLost());
+		holder.winnerCB.setChecked(player.hasWon());
 	}
 
 	static class ViewHolder {

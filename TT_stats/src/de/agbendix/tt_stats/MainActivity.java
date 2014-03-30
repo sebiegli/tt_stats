@@ -1,17 +1,24 @@
 package de.agbendix.tt_stats;
 
+import java.util.Locale;
+
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements
-		ActionBar.TabListener {
+		ActionBar.TabListener, OnInitListener {
 
+	private TextToSpeech tts;
+	
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
 	 * fragments for each of the sections. We use a
@@ -31,6 +38,9 @@ public class MainActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		// Anlegen des TextToSpeech-Objekts
+		tts = new TextToSpeech(this, this);
 
 		// Anlegen der Tabs in der ActionBar
 		final ActionBar actionBar = getActionBar();
@@ -116,5 +126,21 @@ public class MainActivity extends FragmentActivity implements
 				return getString(R.string.title_players);
 			}
 		}
+	}
+
+	@Override
+	public void onInit(int initStatus) {
+		// check for successful instantiation
+		if (initStatus == TextToSpeech.SUCCESS) {
+			if (tts.isLanguageAvailable(Locale.GERMAN) == TextToSpeech.LANG_AVAILABLE)
+				tts.setLanguage(Locale.GERMAN);
+		} else if (initStatus == TextToSpeech.ERROR) {
+			Toast.makeText(this, "Sorry! Text To Speech failed...",
+					Toast.LENGTH_LONG).show();
+		}
+	}
+
+	public void speakOut(String speakthis) {
+		tts.speak(speakthis, TextToSpeech.QUEUE_FLUSH, null);
 	}
 }
