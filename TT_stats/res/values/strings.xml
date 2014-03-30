@@ -1,5 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">TT Logger</string>
+    <string name="bn_save">E I N L O G G E N</string>
+    <string name="title_players">Spielerliste</string>
+    <string name="title_statistics">Statistiken</string>
+    <string name="winner">Gewinner</string>
+    <string name="loser">Verlierer</string>
 
 </resources>

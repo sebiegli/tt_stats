@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:background="@drawable/background" >
+
+    <RelativeLayout 
+		android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true"
+    	android:padding="5dp" >
+        
+        <TextView 
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="@string/winner"
+    	style="@style/ExtraBigFont" 
+    	android:layout_alignParentLeft="true"
+    	android:layout_marginLeft="15dp"/>
+        
+        <TextView 
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="@string/loser"
+    	style="@style/ExtraBigFont" 
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="15dp"/>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentBottom="true"
+    	android:padding="5dp" >
+        
+	    <Button
+        	android:id="@+id/bn_save"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:text="@string/bn_save"
+        	style="@style/BigFont"
+        	android:padding="15dp" />
+    </RelativeLayout>
+    
+    <ListView
+        android:id="@+id/lv_players"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_above="@id/rl_bottom"
+    	android:layout_below="@id/rl_top" />
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -15,6 +15,31 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- Style für den Standard-Text -->
+    <style name="TextFont" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:typeface">normal</item>
+    </style>
+    
+    <!-- Style für den Grossen Text -->
+    <style name="BigFont" parent="@android:style/TextAppearance">
+        <item name="android:textSize">30sp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <!-- Style für grossen Text, nicht fett -->
+    <style name="BigFontNormal" parent="@android:style/TextAppearance">
+        <item name="android:textSize">30sp</item>
+        <item name="android:typeface">normal</item>
+    </style>
+    
+    <!-- Style für extra grossen Text, nicht fett -->
+    <style name="ExtraBigFont" parent="@android:style/TextAppearance">
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">normal</item>
     </style>
 
 </resources>
