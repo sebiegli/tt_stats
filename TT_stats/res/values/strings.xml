@@ -9,5 +9,7 @@
     <string name="loser">Verlierer</string>
     <string name="invalid_combi">Ungültige Eingabe!</string>
     <string name="logged">Ergebnis gespeichert</string>
+    <string name="reset">Datenbank zurückgesetzt!</string>
+    <string name="action_reset">Reset Database</string>
     
 </resources>
